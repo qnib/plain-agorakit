@@ -1,0 +1,4 @@
+{$SITE_HOST}:{$SITE_PORT}
+root {$SITE_ROOT}
+startup php-fpm7.0
+fastcgi / /run/php7.0-fpm.sock php
