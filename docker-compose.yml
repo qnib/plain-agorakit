@@ -2,23 +2,14 @@ version: '3'
 services:
   mysql:
     image: mysql
-    networks:
-      - agorakit
-    container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: "mypassword"
     volumes:
       - /var/lib/mysql
   agorakit:
     image: qnib/plain-agorakit
-    networks:
-      - agorakit
     ports:
       - 8080:8080
     command: wait.sh
     environment:
       MYSQL_ROOT_PASSWORD: "mypassword"
-
-networks:
-  agorakit:
-    external: true
